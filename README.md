@@ -30,4 +30,4 @@ To configure the database locally without changing the url, these steps are need
 1. install mongodb locally
 2. create a new database named ImageShare
 3. create a data folder for database files
-4. run mongod --dbpath <path for your data folder>
+4. run mongod --dbpath [path for your data folder]
