@@ -21,7 +21,7 @@ class App extends Component {
     return new Promise((resolve, reject) => {
       // console.log("getting image id: ", id)
       const path = '/api/' + id
-      axios.get(path, {
+      this.instance.get(path, {
         responseType: 'blob',
         timeout: 30000,
       }).then(
@@ -45,7 +45,7 @@ class App extends Component {
   }
 
   updateMaxID = () => {
-    axios.get('/api/getmax').then(
+    this.instance.get('/api/getmax').then(
       (res) => {
         if (res.status === 200) {
           this.setState({ maxID: res.data })
@@ -78,18 +78,21 @@ class App extends Component {
   }
 
   componentDidMount() {
+    this.instance = axios.create({
+      baseURL: 'http://localhost:8000'
+    });
+    // this.serverRoute = 'http://localhost:8000'
+    this.eligibleFileTypes = ['image/png', 'image/jpeg', 'image/jpg', 'image/gif']
     this.getNextImage()
   }
 
   getUploadedImage = (event) => {
-    const eligibleFileTypes = ['image/png', 'image/jpeg', 'image/jpg', 'image/gif']
     const file = event.target.files[0]
-    console.log("event target: ", event, event.target.files[0])
 
     if (file !== undefined) {
 
       // check if file is image
-      if (!eligibleFileTypes.includes(file.type)) {
+      if (!this.eligibleFileTypes.includes(file.type)) {
         alert('Please upload an image!')
         return
       }
@@ -97,7 +100,7 @@ class App extends Component {
       // console.log("saving image in database")
       let bodyFormData = new FormData()
       bodyFormData.append('image', file)
-      axios({
+      this.instance({
           method: 'post',
           url: '/api/upload',
           data: bodyFormData,
