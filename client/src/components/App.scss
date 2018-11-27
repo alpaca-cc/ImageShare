@@ -1,0 +1,62 @@
+@import '../variables.scss';
+
+.upload-header {
+    background: $dark-gray;
+    min-height: 5vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(5px + 1vmin);
+    color: white;
+}
+
+.header-field {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 15px;
+    padding-top: 10px;
+}
+
+.date {
+    padding: 2.5px 15px ;
+}
+
+button {
+    background: None;
+    color: white;
+    font-size: calc(8px + 1vmin);
+    border: None;
+    cursor: pointer;
+    margin: 0px, 20px;
+    // font-weight: 300;
+}
+
+button:focus, 
+button:hover {
+    color: $light-gray;
+}
+
+button:disabled {
+    visibility: hidden;
+}
+
+.upload-input {
+    width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.upload-input+ label {
+    cursor: pointer;
+}
+
+.upload-input:focus + label,
+.upload-input + label:hover {
+    color: $light-gray;
+}

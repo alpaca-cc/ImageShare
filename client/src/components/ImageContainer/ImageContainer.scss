@@ -1,0 +1,12 @@
+@import '../../variables.scss';
+
+.image-scene {
+    background: $dark-gray;
+    min-height: 100vh;
+}
+
+canvas {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient($dark-gray 30%, black);
+}
