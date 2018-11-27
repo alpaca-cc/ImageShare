@@ -65,14 +65,14 @@ app.post('/api/upload', upload.any(), (req, res) => {
             (imageID) => {
                 console.log("newly created imageID: ", imageID)
                 res.status(200).send(imageID.toString())
+                del('./uploads/*')
             }
         )
         .catch(
             (err) => {
                 res.status(err)
+                del('./uploads/*')
             }
-        ).finally(
-            del('./uploads/*')
         )
     }
 })

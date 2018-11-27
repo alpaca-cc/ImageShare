@@ -79,9 +79,8 @@ class App extends Component {
 
   componentDidMount() {
     this.instance = axios.create({
-      baseURL: 'http://localhost:8000'
+      baseURL: 'http://ec2-34-239-184-129.compute-1.amazonaws.com:8000'
     });
-    // this.serverRoute = 'http://localhost:8000'
     this.eligibleFileTypes = ['image/png', 'image/jpeg', 'image/jpg', 'image/gif']
     this.getNextImage()
   }
