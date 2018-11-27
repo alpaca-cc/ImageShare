@@ -1,7 +1,7 @@
 # ImageShare
 A web program that allows users to upload and view images.
 
-## Access the ImageShare on EC2
+## Access ImageShare on EC2
 The web app is correctly running on an AWS EC2 instance, and can be accessed via:
 http://ec2-34-239-184-129.compute-1.amazonaws.com:5000/
 
@@ -24,7 +24,7 @@ npm start
 The server will run on port 8000. 
 
 ### Database Mongodb
-The server is using mongodb, so to correctly run, mongodb database should be set up. The database url is set inside mongodbStore.js as dbUrl. 
+The server is using mongodb, so to correctly run, mongodb database needs to be set up. The database url is set inside mongodbStore.js as dbUrl. 
 
 To configure the database locally without changing the url, these steps are needed:
 1. install mongodb locally
