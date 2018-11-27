@@ -5,7 +5,7 @@ A web program that allows users to upload and view images.
 
 To start clinet server, go into client folder, run 'npm install' and 'npm start'. 
 
-Right now, it is sending requests to the sever hosted on an AWS ec2 instance. This can be changed by changing the baseURL to '' inside App.js and requests will be redirected to 'http://localhost:8000' as configured in package.json.
+Right now, it is sending requests to the sever hosted on an AWS ec2 instance. This can be changed by changing the baseURL to ''(empty string) inside App.js and requests will be redirected to 'http://localhost:8000' as configured in package.json.
 
 
 To run server locally, go into server folder, run 'npm install' and 'npm start'. The server will run on port 8000. 
