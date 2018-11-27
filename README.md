@@ -22,6 +22,7 @@ npm install
 npm start
 ```
 The server will run on port 8000. 
+Make sure to have the latest version of Nodejs.
 
 ### Database Mongodb
 The server is using mongodb, so to correctly run, mongodb database needs to be set up. The database url is set inside mongodbStore.js as dbUrl. 
