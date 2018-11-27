@@ -49,11 +49,8 @@ class App extends Component {
       (res) => {
         if (res.status === 200) {
           this.setState({ maxID: res.data })
-          if (this.state.imageID >= res.data) {
-            this.setState({ next: true })
-          }
+          this.updateButtonStatus()
         }
-        this.updateButtonStatus()
       }
     ).catch(
       (err) => {
